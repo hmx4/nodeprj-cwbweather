@@ -12,7 +12,7 @@ function cwbwq_json(city, cb)
 	// create the url for querying cwb weather API
 	var baseurl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?";
 	var AuthCode = "CWB-7B45C9F6-0A6A-48DE-AACF-AEC9D4EDE5E2"; // 請抽換成你的中央氣象局授權碼
-	var citystring =  querystring.stringify({'locationName':city});
+	var citystring =  querystring.stringify('locationName=' + city);
 	var qstring = citystring + "&elementName=T,RH,WeatherDescription,MaxT,MinT&format=JSON";
 	var cwbweatherurl = baseurl + qstring;
 	//
