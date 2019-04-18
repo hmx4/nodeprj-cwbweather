@@ -26,7 +26,6 @@
 				$.post(
 					'/cwbweather/' + $('#selectedcity').val(),
 					function(data){
-						$('#city').val(data.city);
 						$('#temp').val("攝氏" + data.temperature +"度");
 					    $('#humid').val(data.humidity + " %");
 						$('#condition').val(data.condition);
@@ -80,7 +79,7 @@
 					xAxis: {
 						categories: ['第0.5天','第1天','第1.5天','第2天','第2.5天','第3天','第3.5天','第4天','第4.5天','第5天','第5.5天','第6天','第6.5天','第7天'],
 						labels: {
-							style: {color:'green', fontSize: '16px', fontFamily: '標楷體'}
+							style: {color:'green', fontSize: '14px', fontFamily: '標楷體'}
 						}
 					},
 					yAxis: {
@@ -99,11 +98,11 @@
 					},
 					series: [{
 						name: '高溫',
-						style: {fontSize: '14px', fontFamily: '標楷體'},
+						style: {fontSize: '12px', fontFamily: '標楷體'},
 						data: htemps
 					}, {
 						name: '低溫',
-						style: {fontSize: '14px', fontFamily: '標楷體'},
+						style: {fontSize: '12px', fontFamily: '標楷體'},
 						data: ltemps
 					}]
 				});
@@ -116,11 +115,11 @@
 <!---->
 <!-- body為網頁的內容，也就是呈現使用者介面UI的地方 -->
 <!---->
-<body class="bg-warning">
+<body class="bg-warning" style="font-family:標楷體">
 <div class="container">
 	<!-- 查詢天氣UI -->
 	<center>
-	<h3 class="bg-primary"><b>臺灣各縣市未來1週每12小時之天氣預報 <br/> (使用中央氣象局氣象開放資料API)</b></h3>
+	<h3 class="bg-primary"><b>臺灣各縣市未來1週每12小時之天氣預報(使用中央氣象局氣象開放資料API)</b></h3>
 	<div> 
 	<h4>
 		<form>
@@ -151,12 +150,11 @@
 		    </select>
 			</div>
 		</form>
-		<b class="text-primary">城市名稱:</b> <input type="text" id="city"> <br/>
 		<b class="text-primary">平均溫度:</b> <input type="text" id="temp"> <br/>
 		<b class="text-primary">相對濕度:</b> <input type="text" id="humid"><br/>
 		<b class="text-primary">更新時間:</b> <input type="text" id="time"><br/>
 		<b class="text-primary">最新天氣狀況:</b> <br/>
-		<textarea id="condition" rows=2 cols=45 class=form-control"></textarea><br/>
+		<textarea id="condition" rows=2 cols=42 class=form-control"></textarea><br/>
 		<button id="btn1" class="btn btn-success btn-md">查詢天氣</button>
 	</h4>
 	</div>
@@ -164,11 +162,10 @@
 	
 	<!-- 回首頁按鈕 -->
 	<center>
-	<div> 
-		<button id="btn2" class="btn btn-info btn-sm"><b>回首頁</b></button>
-	</div>
-	
-	<div id="container" style="min-width: 310px; height: 320px; margin: 0 auto"></div>
+		<div> 
+			<button id="btn2" class="btn btn-info btn-sm"><b>回首頁</b></button>
+		</div>
+		<div id="container" style="min-width: 310px; height: 220px; margin: 0 auto"></div>
 	</center>
 	
 </div>
